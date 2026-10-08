@@ -1,0 +1,645 @@
+<!-- =========================
+     index.html
+     ========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChronoLux - Premium watches for every occasion.">
+    <title>ChronoLux | Premium Watches</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            CHRONO<span>LUX</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+
+            <button class="nav-icon" onclick="toggleWishlist()" title="Wishlist">
+                ♡
+                <span class="wish-count" id="wishCount">0</span>
+            </button>
+
+            <button class="nav-icon" onclick="openCart()" title="Shopping Cart">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()" title="Menu">
+                ☰
+            </button>
+
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO SLIDER ================= -->
+
+<section class="hero" id="home">
+
+    <div class="slide active"
+         style="background-image:url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1800&q=85')">
+
+        <div class="slide-content">
+
+            <div>
+                <p class="eyebrow">TIMELESS ELEGANCE</p>
+
+                <h1>
+                    Time,
+                    <span>Perfected.</span>
+                </h1>
+
+                <p class="description">
+                    Discover precision-crafted watches designed for those
+                    who appreciate exceptional style and timeless quality.
+                </p>
+
+                <a href="#shop" class="btn">
+                    Shop Collection
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slide"
+         style="background-image:url('https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1800&q=85')">
+
+        <div class="slide-content">
+
+            <div>
+                <p class="eyebrow">PREMIUM COLLECTION</p>
+
+                <h1>
+                    Luxury on
+                    <span>Your Wrist.</span>
+                </h1>
+
+                <p class="description">
+                    Sophisticated designs combining modern engineering
+                    with traditional watchmaking.
+                </p>
+
+                <a href="#shop" class="btn">
+                    Explore Watches
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slide"
+         style="background-image:url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1800&q=85')">
+
+        <div class="slide-content">
+
+            <div>
+                <p class="eyebrow">NEW ARRIVALS</p>
+
+                <h1>
+                    Designed to
+                    <span>Last.</span>
+                </h1>
+
+                <p class="description">
+                    Meet the latest additions to the ChronoLux collection.
+                </p>
+
+                <a href="#shop" class="btn">
+                    View New Arrivals
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slider-controls">
+
+        <button class="dot active" onclick="goToSlide(0)"></button>
+        <button class="dot" onclick="goToSlide(1)"></button>
+        <button class="dot" onclick="goToSlide(2)"></button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">✓</div>
+
+        <div>
+            <h4>Authentic Products</h4>
+            <p>100% genuine watches</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+
+        <div>
+            <h4>Free Shipping</h4>
+            <p>On orders over $100</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">↩</div>
+
+        <div>
+            <h4>Easy Returns</h4>
+            <p>30-day return policy</p>
+        </div>
+    </div>
+
+
+    <div class="feature">
+        <div class="feature-icon">⌚</div>
+
+        <div>
+            <h4>2-Year Warranty</h4>
+            <p>Official warranty</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="section" id="shop">
+
+    <div class="section-header">
+
+        <p>Our Collection</p>
+
+        <h2>Featured Watches</h2>
+
+        <span>
+            Find the perfect timepiece for your style.
+        </span>
+
+    </div>
+
+
+    <div class="filters">
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter-btn active"
+                onclick="filterProducts('all', this)">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProducts('classic', this)">
+                Classic
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProducts('sport', this)">
+                Sport
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProducts('luxury', this)">
+                Luxury
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProducts('smart', this)">
+                Smart
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search watches..."
+                oninput="searchProducts()">
+
+            <button>⌕</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="products" id="products"></div>
+
+</section>
+
+
+<!-- ================= COLLECTION BANNER ================= -->
+
+<section class="collection" id="collection">
+
+    <div class="collection-content">
+
+        <p class="eyebrow">THE SIGNATURE COLLECTION</p>
+
+        <h2>Made for Every Moment</h2>
+
+        <p>
+            From boardrooms to adventures, discover watches
+            engineered to accompany every chapter of your life.
+        </p>
+
+        <a href="#shop" class="btn">
+            Discover Collection
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury watch">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="eyebrow">ABOUT CHRONOLUX</p>
+
+            <h2>Precision Meets Personality</h2>
+
+            <p>
+                ChronoLux brings together timeless watchmaking,
+                contemporary design and exceptional craftsmanship.
+            </p>
+
+            <p>
+                Every watch is carefully selected for its design,
+                reliability and ability to stand the test of time.
+            </p>
+
+
+            <ul class="about-list">
+
+                <li>Premium materials</li>
+                <li>Precision movements</li>
+                <li>Worldwide shipping</li>
+                <li>Dedicated customer support</li>
+
+            </ul>
+
+            <a href="#contact" class="btn dark-btn">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="section testimonials">
+
+    <div class="section-header">
+
+        <p>Customer Reviews</p>
+
+        <h2>What Our Customers Say</h2>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Beautiful watch, excellent quality and very fast delivery.
+                The packaging was also premium."
+            </p>
+
+            <div class="customer">
+                — Daniel M.
+            </div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The design looks even better in person. Definitely one
+                of my favorite watches."
+            </p>
+
+            <div class="customer">
+                — James R.
+            </div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Excellent customer service and an amazing shopping
+                experience from beginning to end."
+            </p>
+
+            <div class="customer">
+                — Olivia K.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <p class="eyebrow">STAY IN THE LOOP</p>
+
+    <h2>Join the ChronoLux Club</h2>
+
+    <p>
+        Get new arrivals, exclusive offers and watch inspiration
+        delivered to your inbox.
+    </p>
+
+
+    <form class="newsletter-form" id="newsletterForm">
+
+        <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Enter your email address"
+            required>
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div class="footer-column">
+
+            <a href="#home" class="logo">
+                CHRONO<span>LUX</span>
+            </a>
+
+            <p>
+                Premium watches designed for people who value
+                timeless style and precision.
+            </p>
+
+
+            <div class="socials">
+
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="YouTube">▶</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Shop</h3>
+
+            <a href="#shop">All Watches</a>
+            <a href="#shop">Classic</a>
+            <a href="#shop">Sport</a>
+            <a href="#shop">Luxury</a>
+            <a href="#shop">Smart Watches</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="#about">About Us</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Warranty</a>
+            <a href="#">FAQ</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Contact</h3>
+
+            <p>Email: support@chronolux.com</p>
+            <p>Phone: +1 800 123 4567</p>
+            <p>Mon–Fri: 9:00–18:00</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © <span id="year"></span> ChronoLux. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- ================= CART OVERLAY ================= -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+
+<!-- ================= CART ================= -->
+
+<aside class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button
+            class="close-cart"
+            onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                $0
+            </span>
+
+        </div>
+
+        <button
+            class="checkout"
+            onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeModal()">
+            ×
+        </button>
+
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Watch">
+
+        </div>
+
+
+        <div class="modal-details">
+
+            <p class="product-category" id="modalCategory"></p>
+
+            <h2 id="modalName"></h2>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <div class="price" id="modalPrice"></div>
+
+            <p id="modalDescription"></p>
+
+            <button
+                class="btn"
+                id="modalCartButton">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+    Added to cart!
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
